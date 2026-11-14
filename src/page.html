@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zbigniew Zabost · SRE</title>
+<script>
+  // JavaScript is on: hide the plain-HTML career run until the animation draws it.
+  // Safety net: DOMContentLoaded fires only after the page script has run, at any connection speed;
+  // if the career run still isn't live then, the script failed, so show the plain-HTML version.
+  document.documentElement.classList.add('js');
+  document.addEventListener('DOMContentLoaded', function () {
+    var r = document.getElementById('run');
+    if (r && !r.classList.contains('live')) document.documentElement.classList.remove('js');
+  });
+</script>
+<meta name="description" content="Zbigniew Zabost, Senior Site Reliability Engineer. Kubernetes fleets on AWS, Azure and GCP, CI/CD platforms, and AI agents for operations.">
+<meta property="og:title" content="Zbigniew Zabost · Senior Site Reliability Engineer">
+<meta property="og:description" content="16 years from test automation to SRE: Kubernetes fleets on AWS, Azure and GCP, delivery platforms, and AI in operations.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 28,9 28,23 16,30 4,23 4,9' fill='%230f1626' stroke='%23f59e0b' stroke-width='2.5'/%3E%3Ctext x='16' y='20.5' font-family='monospace' font-size='11' font-weight='700' fill='%23fff' text-anchor='middle'%3EZZ%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+/*FONTS*/
+/* Layout: one column. Header with animated emblem → hero → "career run" (pipeline stages that collect skill badges, with player) → ways of working + topic hashtags. */
+:root {
+  --bg: #f5f6fa; --surface: #ffffff; --sunk: #eef1f6; --fg: #121725; --muted: #5b6477; --faint: #98a1b3;
+  --line: #dde2ec; --line-2: #c9d0de; --accent: #2f5bea; --ok: #0e9f7e; --run: #d98400;
+  --node-on: #ffffff; --node-off: #f1f3f8; --node-off-stroke: #cfd5e1; --node-off-ink: #b3bbcb;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0a0d15; --surface: #10141f; --sunk: #0c1019; --fg: #e7ebf4; --muted: #9099ae; --faint: #586178;
+  --line: #1f2638; --line-2: #2a3349; --accent: #7aa2ff; --ok: #2fd3b4; --run: #ffb547;
+  --node-on: #0f1626; --node-off: #0b0f18; --node-off-stroke: #252e44; --node-off-ink: #3a4560; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0a0d15; --surface: #10141f; --sunk: #0c1019; --fg: #e7ebf4; --muted: #9099ae; --faint: #586178;
+  --line: #1f2638; --line-2: #2a3349; --accent: #7aa2ff; --ok: #2fd3b4; --run: #ffb547;
+  --node-on: #0f1626; --node-off: #0b0f18; --node-off-stroke: #252e44; --node-off-ink: #3a4560; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body); -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; }
+a { color: var(--accent); text-decoration: none; } a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h2 { font: 600 13px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; display: flex; align-items: center; gap: 12px; }
+h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+section { padding-block: 34px 8px; }
+section:last-of-type { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 48px); }
+.ico { display: inline-block; vertical-align: middle; flex: none; }
+
+/* ---------- header / hero ---------- */
+.links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font: 13px var(--mono); }
+.links a, .links button { display: inline-flex; gap: 6px; align-items: center; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 6px 10px; border-radius: 8px; font: inherit; cursor: pointer; }
+.namebar { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; padding-block: calc(env(safe-area-inset-top, 0px) + 28px) 0; }
+.who { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.emblem { flex: none; display: block; }
+.hero { padding-block: 10px 6px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+h1 { font: 700 clamp(34px, 6vw, 58px)/1.02 var(--display); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.title { font: 500 clamp(17px, 2.2vw, 21px)/1.3 var(--display); color: var(--muted); margin: 10px 0 0; text-wrap: balance; }
+.hero .title b { color: var(--fg); font-weight: 600; }
+.hero p.lede { max-width: 62ch; margin: 16px 0 0; }
+.facts { display: grid; gap: 8px; font-size: 14px; }
+.facts div { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
+.facts dt { font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.facts dd { margin: 0; }
+
+/* ---------- career run ---------- */
+.strip { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 7px 12px; font: 11px var(--mono); color: var(--muted); letter-spacing: .03em; min-width: 0; }
+.chip b { display: block; font: 700 20px/1.2 var(--display); color: var(--fg); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.chip.now { flex: 1 1 260px; }
+.chip.now b { font-size: 17px; }
+.chip.hl b { color: var(--run); }
+/* without JavaScript the plain-HTML finished state shows and the player is hidden;
+   with JavaScript the career run stays hidden until the animation has drawn, so the fallback never flashes */
+html:not(.js) .player, html:not(.js) .hint, html:not(.js) #theme { display: none; }
+html.js #run:not(.live) .strip, html.js #run:not(.live) .stages, html.js #run:not(.live) .insp { visibility: hidden; }
+.player { display: flex; gap: 8px; align-items: center; margin: 14px 0; }
+.player button { font: 500 13px var(--mono); border: 1px solid var(--line); background: var(--surface); color: var(--fg); min-width: 36px; height: 34px; border-radius: 8px; cursor: pointer; }
+.player button.main { background: var(--accent); color: var(--surface); border-color: var(--accent); min-width: 44px; }
+.scrub { position: relative; flex: 1; height: 34px; min-width: 0; }
+.scrub input { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; margin: 0; }
+.scrub .rail { position: absolute; left: 0; right: 0; top: 13px; height: 4px; background: var(--line); border-radius: 2px; }
+.scrub .fill { position: absolute; left: 0; top: 13px; height: 4px; background: var(--accent); border-radius: 2px; }
+.scrub .knob { position: absolute; top: 7px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--accent); pointer-events: none; }
+.scrub .mk { position: absolute; top: 22px; font: 9.5px var(--mono); color: var(--faint); transform: translateX(-50%); white-space: nowrap; pointer-events: none; }
+.scrub input:focus-visible ~ .knob { outline: 2px solid var(--accent); outline-offset: 2px; }
+.player .yr { font: 600 15px var(--mono); min-width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
+
+.stages { display: grid; grid-template-columns: .85fr 1.75fr 2.1fr; gap: 10px; }
+.st { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--surface); min-width: 0; transition: opacity .3s; }
+.st.pend { opacity: .5; }
+.st h3 { margin: 0; display: flex; gap: 8px; align-items: center; font: 600 16px var(--display); }
+.st .yrs { font: 11px var(--mono); color: var(--muted); }
+.st .bar { height: 4px; background: var(--line); border-radius: 2px; margin: 10px 0 6px; overflow: hidden; } .st .bar i { display: block; height: 100%; background: var(--run); }
+.st.done .bar i { background: var(--ok); }
+.titles { font-size: 13px; line-height: 1.4; padding: 7px 0 2px; border-top: 1px dashed var(--line); }
+.s-ok { color: var(--ok); } .s-run { color: var(--run); } .s-pnd { color: var(--faint); }
+.bds { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 8px; }
+.bd { width: 70px; text-align: center; font: 9.5px/1.2 var(--mono); color: var(--fg); cursor: pointer; border-radius: 8px; padding: 4px 0; border: 1px solid transparent; background: none; }
+.bd.off { color: var(--node-off-ink); }
+.bd.fresh svg { filter: drop-shadow(0 0 6px var(--c)); }
+.bd.sel { border-color: var(--line-2); background: var(--sunk); }
+.below { margin-top: 10px; }
+.insp { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--surface); min-width: 0; }
+.insp .ih { display: flex; gap: 10px; align-items: center; margin-bottom: 4px; }
+.insp h4 { margin: 0; font: 500 10.5px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.insp .nm { font: 600 17px var(--display); }
+.insp .meta { font: 400 12px var(--mono); color: var(--muted); margin-left: 6px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.insp p { margin: 4px 0 0; font-size: 14px; }
+.tag { display: inline-block; font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 1px 6px; border-radius: 3px; color: #fff; }
+.hint { font: 12px var(--mono); color: var(--muted); margin: 8px 0 0; }
+
+/* ---------- ways of working ---------- */
+.ways { display: flex; flex-wrap: wrap; gap: 8px; }
+.way { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; font-size: 13.5px; }
+.way b { font: 500 13px var(--mono); color: var(--accent); }
+.way span { color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 16px; font: 13px var(--mono); color: var(--muted); }
+.tg { display: inline-flex; align-items: center; gap: 5px; }
+
+@media (max-width: 980px) {
+  .stages { grid-template-columns: 1fr 1fr; }
+  .stages > .st:last-child { grid-column: 1 / -1; }
+  .hero { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 640px) {
+  .stages { grid-template-columns: 1fr; }
+  .stages > .st:last-child { grid-column: auto; }
+  .scrub .mk { display: none; }
+  .player .opt { display: none; }
+  .facts div { grid-template-columns: 90px 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .bd.fresh svg { filter: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="namebar">
+    <div class="who">
+      <svg class="emblem" id="emblem" width="58" height="58" viewBox="-40 -40 80 80" aria-hidden="true">
+        <g><polygon points="0,-34 29.4,-17 29.4,17 0,34 -29.4,17 -29.4,-17" fill="none" style="stroke:var(--line-2)" stroke-width="1.4" stroke-dasharray="4 5"/>
+          <circle cx="0" cy="-34" r="3.4" fill="#3b7bff"/><circle cx="29.4" cy="17" r="3.4" fill="#f59e0b"/><circle cx="-29.4" cy="17" r="3.4" fill="#f43f5e"/>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/></g>
+        <g><polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" style="fill:var(--node-on);stroke:var(--fg)" stroke-width="1.6"/>
+          <animateTransform attributeName="transform" type="scale" values="1;1.07;1" dur="3.2s" repeatCount="indefinite"/></g>
+        <polyline points="-14,2 -7,2 -4,-8 0,10 4,-4 7,2 14,2" fill="none" stroke="#0ea5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="48" stroke-dashoffset="48">
+          <animate attributeName="stroke-dashoffset" values="48;0;0;-48" keyTimes="0;.45;.7;1" dur="2.4s" repeatCount="indefinite"/></polyline>
+      </svg>
+      <h1>Zbigniew Zabost</h1>
+    </div>
+    <nav class="links" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/zabostz" target="_blank" rel="noopener" id="li">LinkedIn</a>
+      <button id="theme" aria-label="Dark theme" aria-pressed="false">◐ Theme</button>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="title"><b>Senior Site Reliability Engineer.</b> Kubernetes fleets on AWS, Azure &amp; GCP · delivery platforms · AI agents for operations</p>
+      <p class="lede">I build the automation that lets infrastructure scale safely: standardised, tested Kubernetes delivery across three clouds, rollouts that make fleet-wide change boring, and guard rails that come out of hard root causes. My roots are in test automation, so I verify that alerts, checks and rollouts actually work instead of assuming they do.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Based in</dt><dd>Berlin, Germany</dd></div>
+      <div><dt>Experience</dt><dd>16 years in tech · 10+ in infrastructure · on-call since 2016</dd></div>
+      <div><dt>Languages</dt><dd>Polish · English · German</dd></div>
+    </dl>
+  </div>
+
+  <section id="run" aria-label="Career run">
+    <h2>Career run · 2010 → today</h2>
+    <div class="strip" id="strip"><!--STATIC_STRIP--></div>
+    <div class="player">
+      <button class="main" id="play" aria-label="Pause">❚❚</button>
+      <button id="prev" aria-label="Previous milestone">⏮</button>
+      <button id="next" aria-label="Next milestone">⏭</button>
+      <button id="speed" class="opt" aria-label="Playback speed">1×</button>
+      <div class="scrub" id="scrub">
+        <div class="rail"></div><div class="fill" id="fill"></div>
+        <input id="range" type="range" min="0" max="1000" value="1000" aria-label="Year">
+        <div class="knob" id="knob"></div>
+      </div>
+      <span class="yr" id="yr">2026</span>
+    </div>
+    <div class="stages" id="stages"><!--STATIC_STAGES--></div>
+    <div class="insp below" id="insp"></div>
+    <div class="sr" id="announce" aria-live="polite"></div>
+    <p class="hint">Space plays or pauses · ← → jump between milestones · click a skill to inspect it</p>
+  </section>
+
+  <section id="ways">
+    <h2>Ways of working</h2>
+    <div class="ways" id="way-list"><!--STATIC_WAYS--></div>
+    <div class="tags" id="tag-list" aria-label="Topics"><!--STATIC_TAGS--></div>
+  </section>
+
+</div>
+
+<script type="application/json" id="content">/*CONTENT*/</script>
+<script>
+/*ICONS*/
+</script>
+<script>
+/* ============================================================
+   CONTENT · lives in src/content.json, inlined by build.py
+   ============================================================ */
+const { Y0, NOW, DURATION, ROLES, STAGES, BRANCHES, TREE, TAGS, WAYS } = JSON.parse(document.getElementById('content').textContent);
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+const $ = id => document.getElementById(id);
+const BY = Object.fromEntries(TREE.map(n => [n[0], n]));
+const lum = h => { const n = parseInt(h, 16); return (0.2126 * ((n >> 16) & 255) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255)) / 255; };
+const yrStr = y => String(Math.floor(y));
+const roleAt = y => ROLES.find(r => y >= r.a && y < r.b + 0.001) || (y < Y0 ? ROLES[0] : ROLES[ROLES.length - 1]);
+const has = (n, y) => n[4] <= y;
+const branchColor = n => BRANCHES[n[1]][1];
+function iconFill(h) { const l = lum(h); return l < 0.22 || l > 0.86 ? 'var(--fg)' : '#' + h; }
+// multi-colour logos carry internal ids (gradients, clip paths); give every copy its own so ids stay unique
+let uidN = 0;
+function uniq(svg) {
+  const ids = [...svg.matchAll(/id="([^"]+)"/g)].map(m => m[1]); if (!ids.length) return svg;
+  const k = '-u' + (++uidN);
+  ids.forEach(id => { svg = svg.split(`id="${id}"`).join(`id="${id}${k}"`).split(`#${id})`).join(`#${id}${k})`).split(`"#${id}"`).join(`"#${id}${k}"`); });
+  return svg;
+}
+function ico(slug, size = 18) {
+  const i = ICONS[slug]; if (!i) return '';
+  if (i.svg) return uniq(i.svg).replace('<svg', `<svg class="ico" width="${size}" height="${size}" style="color:var(--fg)" aria-hidden="true"`);
+  return `<svg class="ico" width="${size}" height="${size}" viewBox="0 0 24 24" aria-hidden="true"><path style="fill:${iconFill(i.h)}" d="${i.p}"/></svg>`;
+}
+// hexagon skill badge as SVG markup centred on (cx, cy)
+function hexNode(n, on, cx, cy, r = 24) {
+  const c = branchColor(n);
+  const hex = Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 6 + i * Math.PI / 3; return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`; }).join(' ');
+  let inner; const s = Math.round(r * 0.9);
+  if (n[3][0] === '#') inner = `<text x="${cx}" y="${cy + 4}" text-anchor="middle" style="font:500 ${n[3].length > 3 ? 10.5 : 12.5}px var(--mono);fill:${on ? 'var(--fg)' : 'var(--node-off-ink)'}">${n[3].slice(1)}</text>`;
+  else { const i = ICONS[n[3]];
+    inner = i.svg ? `<g opacity="${on ? 1 : .22}">${uniq(i.svg).replace('<svg', `<svg x="${cx - s / 2}" y="${cy - s / 2}" width="${s}" height="${s}" style="color:var(--fg)"`)}</g>`
+      : `<svg x="${cx - s / 2}" y="${cy - s / 2}" width="${s}" height="${s}" viewBox="0 0 24 24" opacity="${on ? 1 : .22}"><path style="fill:${on ? iconFill(i.h) : 'var(--node-off-ink)'}" d="${i.p}"/></svg>`; }
+  return `<polygon points="${hex}" style="fill:${on ? 'var(--node-on)' : 'var(--node-off)'};stroke:${on ? c : 'var(--node-off-stroke)'}" stroke-width="${on ? 2 : 1.2}" ${on ? '' : 'stroke-dasharray="3 3"'}/>${inner}`;
+}
+function inspHTML(n, y, title) {
+  if (!n) return `<h4>${title}</h4><p style="color:var(--muted)">Nothing yet. Press play.</p>`;
+  const c = branchColor(n), yr = Math.floor(n[4]);
+  return `<div class="ih"><h4>${title}</h4><span class="tag" style="background:${c}">${BRANCHES[n[1]][0]}</span></div>
+    <div class="nm">${n[2]} <span class="meta">${has(n, y) ? `since ${yr}${n[6] ? ' · ' + n[6] : ''}` : `arrives ${yr}`}</span></div><p>${n[5]}</p>`;
+}
+const newestAt = y => { let best = null; TREE.forEach(n => { if (has(n, y) && (!best || n[4] >= best[4])) best = n; }); return best; };
+
+/* ============================================================
+   CAREER RUN (pipeline stages that collect skill badges)
+   ============================================================ */
+let y = Y0, playing = true, speed = 1, sel = null, last = performance.now();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduce) { y = NOW; playing = false; }
+const stageOf = v => STAGES.findIndex(s => v < s.b);
+// titles held in a stage so far: one per title family, the latest reached, comma-separated
+function titlesFor(s) {
+  const fam = new Map();
+  ROLES.filter(r => r.a >= s.a - 0.01 && r.a < s.b && r.a <= y).forEach(r => fam.set(r.g, r.t)); // keeps first-seen order, latest title wins
+  return [...new Set(fam.values())].join(', ');
+}
+
+function renderStrip() {
+  const r = roleAt(y);
+  const picked = TREE.filter(n => has(n, y)).length;
+  const clouds = ['aws', 'gcp', 'azure'].filter(k => has(BY[k], y)).length;
+  $('strip').innerHTML = `
+    <div class="chip now">now<b>${r.t}</b></div>
+    <div class="chip hl">years of experience<b>${Math.max(0, y - Y0).toFixed(1)}</b></div>
+    <div class="chip">skills picked up<b>${picked}</b></div>
+    <div class="chip">clouds used<b>${clouds}</b></div>
+    <div class="chip">on-call<b>${y < 2016.45 ? '—' : 'since 2016'}</b></div>`;
+}
+function renderStages() {
+  const focused = document.activeElement && document.activeElement.closest && document.activeElement.closest('.bd');
+  const fid = focused ? focused.dataset.id : null;
+  $('stages').innerHTML = STAGES.map((s, i) => {
+    const st = y < s.a ? 'pend' : y >= s.b ? 'done' : 'run';
+    const pct = Math.max(0, Math.min(1, (y - s.a) / (Math.min(s.b, NOW) - s.a))) * 100;
+    const icon = st === 'done' ? '<span class="s-ok">✓</span>' : st === 'run' ? '<span class="s-run">●</span>' : '<span class="s-pnd">○</span>';
+    const nodes = TREE.filter(n => stageOf(n[4]) === i).sort((p, q) => p[4] - q[4]); // in the order they were picked up
+    return `<div class="st ${st}"><h3>${icon} ${s.label}</h3><div class="yrs">stage ${i + 1} · ${s.n} · ${Math.floor(s.a)}–${s.b > 2050 ? 'today' : Math.floor(s.b)}</div>
+      <div class="bar"><i style="width:${pct}%"></i></div>
+      ${titlesFor(s) ? `<div class="titles">${titlesFor(s)}</div>` : ''}
+      <div class="bds">${nodes.map(n => { const on = has(n, y), c = branchColor(n); const fresh = on && playing && y - n[4] < 0.35;
+        return `<button class="bd ${on ? '' : 'off'} ${fresh ? 'fresh' : ''} ${sel === n[0] ? 'sel' : ''}" data-id="${n[0]}" style="--c:${c}" aria-label="${n[2]}">
+          <svg width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">${hexNode(n, on, 26, 26, 23)}</svg>${n[2]}</button>`; }).join('')}</div></div>`;
+  }).join('');
+  if (fid) { const b = $('stages').querySelector(`.bd[data-id="${fid}"]`); if (b) b.focus({ preventScroll: true }); }
+}
+let lastKey = '';
+function renderRun() {
+  // the heavy parts only change once per simulated month, not on every animation frame
+  const key = [Math.floor(y * 12), sel, playing].join('|');
+  if (key !== lastKey) {
+    lastKey = key;
+    renderStrip(); renderStages();
+    $('insp').innerHTML = inspHTML(BY[sel] || newestAt(y), y, sel ? 'Inspecting' : 'Latest');
+  }
+  const f = (y - Y0) / (NOW - Y0) * 100;
+  $('fill').style.width = f + '%'; $('knob').style.left = f + '%'; $('range').value = Math.round(f * 10);
+  $('yr').textContent = yrStr(y);
+  $('play').textContent = playing ? '❚❚' : '▶'; $('play').setAttribute('aria-label', playing ? 'Pause' : 'Play');
+}
+const announce = () => { const n = BY[sel]; $('announce').textContent = n ? `${n[2]}, since ${Math.floor(n[4])}. ${n[5]}` : ''; };
+$('stages').addEventListener('pointerdown', e => { const b = e.target.closest('.bd'); if (!b) return; sel = sel === b.dataset.id ? null : b.dataset.id; renderRun(); announce(); });
+$('stages').addEventListener('keydown', e => { const b = e.target.closest('.bd'); if (b && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); e.stopPropagation(); sel = b.dataset.id; renderRun(); announce(); } });
+$('scrub').insertAdjacentHTML('afterbegin', STAGES.map(s => `<div class="mk" style="left:${(s.a - Y0) / (NOW - Y0) * 100}%">${s.label}</div>`).join(''));
+function seek(v) { y = Math.max(Y0, Math.min(NOW, v)); renderRun(); }
+$('range').addEventListener('input', e => { playing = false; seek(Y0 + (+e.target.value / 1000) * (NOW - Y0)); });
+$('play').onclick = () => { if (!playing && y >= NOW) y = Y0; playing = !playing; renderRun(); if (playing) startLoop(); };
+// milestones = the start of each role
+const stepEv = d => { playing = false; const ys = ROLES.map(r => r.a); const t = d > 0 ? ys.find(v => v > y + 0.01) : [...ys].reverse().find(v => v < y - 0.01); seek(t ?? (d > 0 ? NOW : Y0)); };
+$('prev').onclick = () => stepEv(-1); $('next').onclick = () => stepEv(1);
+$('speed').onclick = () => { speed = speed === 1 ? 2 : speed === 2 ? 0.5 : 1; $('speed').textContent = speed + '×'; };
+addEventListener('keydown', e => {
+  if (e.target.closest && e.target.closest('input, button, a, textarea')) return;
+  if (e.key === ' ') { e.preventDefault(); $('play').click(); }
+  if (e.key === 'ArrowRight') stepEv(1); if (e.key === 'ArrowLeft') stepEv(-1);
+});
+// the frame loop runs only while playing, so a paused or finished page lets the device idle
+let looping = false;
+function startLoop() { if (looping) return; looping = true; last = performance.now(); requestAnimationFrame(tick); }
+function tick(now) {
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  if (playing) { y += dt * (NOW - Y0) / DURATION * speed; if (y >= NOW) { y = NOW; playing = false; } renderRun(); }
+  if (playing) requestAnimationFrame(tick); else looping = false;
+}
+
+/* ============================================================
+   STATIC SECTIONS
+   ============================================================ */
+$('li').insertAdjacentHTML('afterbegin', ico('linkedin', 14));
+$('way-list').innerHTML = WAYS.map(w => `<span class="way"><b>#${w[0].replace(/[^A-Za-z0-9]+(.)?/g, (m, c) => c ? c.toUpperCase() : '')}</b>${w[1] ? ` <span>${w[1]}</span>` : ''}</span>`).join('');
+$('tag-list').innerHTML = TAGS.map(t => `<span class="tg">${t[1] ? ico(t[1], 13) : ''}#${t[0]}</span>`).join('');
+
+/* ---------- theme toggle (system by default) ---------- */
+(function theme() {
+  const root = document.documentElement; let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+  const mq = matchMedia('(prefers-color-scheme: dark)');
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : mq.matches;
+  const sync = () => $('theme').setAttribute('aria-pressed', String(isDark()));
+  $('theme').onclick = () => {
+    root.dataset.theme = isDark() ? 'light' : 'dark';
+    try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    sync();
+  };
+  if (mq.addEventListener) mq.addEventListener('change', sync);
+  sync();
+})();
+
+renderRun(); $('run').classList.add('live'); if (playing) startLoop();
+</script>
+</body>
+</html>
