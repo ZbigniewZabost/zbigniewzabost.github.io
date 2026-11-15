@@ -159,6 +159,7 @@ html.js #run:not(.live) .strip, html.js #run:not(.live) .stages, html.js #run:no
     </div>
     <nav class="links" aria-label="Contact">
       <a href="https://www.linkedin.com/in/zabostz" target="_blank" rel="noopener" id="li">LinkedIn</a>
+      <a href="https://github.com/ZbigniewZabost" target="_blank" rel="noopener" id="gh">GitHub</a>
       <button id="theme" aria-label="Dark theme" aria-pressed="false">◐ Theme</button>
     </nav>
   </header>
@@ -343,6 +344,7 @@ function tick(now) {
    STATIC SECTIONS
    ============================================================ */
 $('li').insertAdjacentHTML('afterbegin', ico('linkedin', 14));
+$('gh').insertAdjacentHTML('afterbegin', ico('github', 14));
 $('way-list').innerHTML = WAYS.map(w => `<span class="way"><b>#${w[0].replace(/[^A-Za-z0-9]+(.)?/g, (m, c) => c ? c.toUpperCase() : '')}</b>${w[1] ? ` <span>${w[1]}</span>` : ''}</span>`).join('');
 $('tag-list').innerHTML = TAGS.map(t => `<span class="tg">${t[1] ? ico(t[1], 13) : ''}#${t[0]}</span>`).join('');
 

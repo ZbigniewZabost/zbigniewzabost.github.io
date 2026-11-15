@@ -19,6 +19,7 @@ Each entry gives title, author, source, licence and any change made. For the CC 
 | Docker | Brand owner (trademark) | https://www.docker.com/company/newsroom/media-resources | CC0-1.0 (via Simple Icons) | None |
 | Elastic | Brand owner (trademark) | https://www.elastic.co/brand | CC0-1.0 (via Simple Icons) | None |
 | GitHub Actions | Brand owner (trademark) | https://github.com/features/actions | CC0-1.0 (via Simple Icons) | None |
+| GitHub | Brand owner (trademark) | https://github.com/logos | CC0-1.0 (via Simple Icons) | None |
 | GNU Bash | official-bash-logo contributors | https://github.com/odb/official-bash-logo/tree/61eff022f2dad3c7468f5deb4f06652d15f2c143 | MIT | None |
 | Go | Brand owner (trademark) | https://blog.golang.org/go-brand | CC0-1.0 (via Simple Icons) | None |
 | Google Cloud | Brand owner (trademark) | https://cloud.google.com | CC0-1.0 (via Simple Icons) | None |
