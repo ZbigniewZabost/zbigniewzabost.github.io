@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render og-image.png (1200x630), the picture LinkedIn/Slack show when the page link is shared.
+"""Render docs/og-image.png (1200x630), the picture LinkedIn/Slack show when the page link is shared.
 
     python3 tools/og_image.py        # needs Pillow
 """
@@ -38,5 +38,5 @@ d.text((82, 405), 'Kubernetes fleets on AWS, Azure & GCP', font=F('ibm-plex-mono
 d.text((82, 442), 'delivery platforms · AI agents for operations', font=F('ibm-plex-mono-400.woff2', 26), fill=MUTED)
 d.text((82, 540), '#SRE  #Kubernetes  #PlatformEngineering  #AIOps', font=F('ibm-plex-mono-500.woff2', 24), fill=BRANCH[3])
 
-img.save(os.path.join(ROOT, 'og-image.png'), optimize=True)
-print('og-image.png written')
+img.save(os.path.join(ROOT, 'docs', 'og-image.png'), optimize=True)
+print('docs/og-image.png written')

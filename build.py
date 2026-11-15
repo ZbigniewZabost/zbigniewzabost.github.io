@@ -109,8 +109,9 @@ def main():
         url = sys.argv[sys.argv.index('--site-url') + 1].rstrip('/')
         html = html.replace('content="og-image.png"', f'content="{url}/og-image.png"')
         html = html.replace('<meta property="og:type"', f'<meta property="og:url" content="{url}/">\n<meta property="og:type"')
-    open(os.path.join(ROOT, 'index.html'), 'w').write(html)
-    print('index.html', len(html) // 1024, 'KB')
+    # GitHub Pages publishes only docs/, so sources and tooling are not served as web pages
+    open(os.path.join(ROOT, 'docs', 'index.html'), 'w').write(html)
+    print('docs/index.html', len(html) // 1024, 'KB')
 
 if __name__ == '__main__':
     main()

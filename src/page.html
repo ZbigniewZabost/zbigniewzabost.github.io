@@ -105,6 +105,7 @@ html.js #run:not(.live) .strip, html.js #run:not(.live) .stages, html.js #run:no
 .bds { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 8px; }
 .bd { width: 70px; text-align: center; font: 9.5px/1.2 var(--mono); color: var(--fg); cursor: pointer; border-radius: 8px; padding: 4px 0; border: 1px solid transparent; background: none; }
 .bd.off { color: var(--node-off-ink); }
+.bd svg { display: block; margin: 0 auto; }
 .bd.fresh svg { filter: drop-shadow(0 0 6px var(--c)); }
 .bd.sel { border-color: var(--line-2); background: var(--sunk); }
 .below { margin-top: 10px; }
@@ -220,7 +221,8 @@ const $ = id => document.getElementById(id);
 const BY = Object.fromEntries(TREE.map(n => [n[0], n]));
 const lum = h => { const n = parseInt(h, 16); return (0.2126 * ((n >> 16) & 255) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255)) / 255; };
 const yrStr = y => String(Math.floor(y));
-const roleAt = y => ROLES.find(r => y >= r.a && y < r.b + 0.001) || (y < Y0 ? ROLES[0] : ROLES[ROLES.length - 1]);
+// current role = the last one that has started; before the first start date, the first role
+const roleAt = y => ROLES.reduce((cur, r) => (r.a <= y + 1e-6 ? r : cur), ROLES[0]);
 const has = (n, y) => n[4] <= y;
 const branchColor = n => BRANCHES[n[1]][1];
 function iconFill(h) { const l = lum(h); return l < 0.22 || l > 0.86 ? 'var(--fg)' : '#' + h; }

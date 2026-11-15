@@ -4,14 +4,12 @@ This page embeds third-party logos and fonts. Product names and logos are tradem
 
 ## Logos (`assets/icons/tools/`)
 
-Each entry gives title, author, source, licence and any change made. For the CC BY, CC BY-SA, Apache-2.0 and MIT logos, this is the required attribution. Logos without their own licence come from [Simple Icons](https://simpleicons.org) 13.21.0, published under CC0-1.0. The marks remain trademarks of their owners.
+Each entry gives title, author, source, licence and any change made. For the CC BY, CC BY-SA and MIT logos, this is the required attribution. Logos without their own licence come from [Simple Icons](https://simpleicons.org) 13.21.0, published under CC0-1.0. The marks remain trademarks of their owners.
 
 | Logo | Author / owner | Source | Licence | Changes |
 |---|---|---|---|---|
 | Ansible | Brand owner (trademark) | https://www.ansible.com/logos | CC0-1.0 (via Simple Icons) | None |
 | Anthropic | Brand owner (trademark) | https://www.anthropic.com | CC0-1.0 (via Simple Icons) | None |
-| Apache Groovy | The Apache Software Foundation | https://apache.org/logos | Apache-2.0 | None |
-| Apache JMeter | The Apache Software Foundation | https://apache.org/logos | Apache-2.0 | None |
 | Argo | Brand owner (trademark) | https://github.com/cncf/artwork/blob/c2e619cdf85e8bac090ceca7c0834c5cfedf9426/projects/argo/icon/black/argo-icon-black.svg | CC0-1.0 (via Simple Icons) | None |
 | AWS | Amazon Web Services (trademark) | https://github.com/devicons/devicon (2.16.0) | MIT (Devicon, see below) | Wordmark text recoloured to follow the page theme |
 | Azure | Microsoft (trademark) | https://github.com/devicons/devicon (2.16.0) | MIT (Devicon, see below) | None |
@@ -43,13 +41,10 @@ Each entry gives title, author, source, licence and any change made. For the CC 
 | Python | Brand owner (trademark) | https://www.python.org/community/logos/ | CC0-1.0 (via Simple Icons) | None |
 | Red Hat Open Shift | Brand owner (trademark) | https://www.openshift.com | CC0-1.0 (via Simple Icons) | None |
 | Selenium | Brand owner (trademark) | https://github.com/SeleniumHQ/heroku-selenium/blob/2f66891ba030d3aa1f36ab1748c52ba4fb4e057d/selenium-green.svg | CC0-1.0 (via Simple Icons) | None |
-| Sonatype | Brand owner (trademark) | https://www.sonatype.com/company/press-kit | CC0-1.0 (via Simple Icons) | None |
-| Sumo Logic | Brand owner (trademark) | https://sites.google.com/sumologic.com/sumo-logic-brand/home | CC0-1.0 (via Simple Icons) | None |
 | Tailscale | Brand owner (trademark) | https://tailscale.com/press | CC0-1.0 (via Simple Icons) | None |
 | Temporal | Brand owner (trademark) | https://github.com/temporalio/temporaldotio/blob/b6b5f3ed1fda818d5d6c07e27ec15d51a61f2267/public/images/icons/temporal-no-text.svg | CC0-1.0 (via Simple Icons) | None |
 | Terraform | Brand owner (trademark) | https://www.hashicorp.com/brand | CC0-1.0 (via Simple Icons) | None |
 | Vault | Brand owner (trademark) | https://www.hashicorp.com/brand | CC0-1.0 (via Simple Icons) | None |
-| VMware | Brand owner (trademark) | https://myvmware.workspaceair.com | CC0-1.0 (via Simple Icons) | None |
 
 Every logo is embedded as inline SVG. Apart from the changes listed, the shapes are unmodified. At display time, single-colour logos are drawn in their official brand colour, with two exceptions: a very dark or very light brand colour is replaced by the page's text colour so it stays visible in both themes, and logos for skills not yet reached in the animation are shown in grey.
 
