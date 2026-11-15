@@ -64,7 +64,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Fonts (`assets/fonts/`)
 
-All three are licensed under the SIL Open Font License 1.1. They are embedded in `index.html` as web fonts. The full licence texts are in `assets/fonts/LICENSE-*.txt`.
+All three are licensed under the SIL Open Font License 1.1. They are embedded in `docs/index.html` as web fonts. The full licence texts are in `assets/fonts/LICENSE-*.txt`.
 
 | Font | Copyright | Source |
 |---|---|---|

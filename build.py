@@ -3,10 +3,11 @@
 
 Inlines the content (src/content.json), the logos it uses (assets/icons) and the fonts
 (assets/fonts) into src/page.html, adds a plain-HTML copy of the finished career run
-for visitors without JavaScript, and writes index.html. The published page makes no third-party
-requests (no Google Fonts, no CDN), so visitors' IPs go only to the host.
+for visitors without JavaScript, and writes docs/index.html (GitHub Pages publishes only
+docs/). The published page makes no third-party requests (no Google Fonts, no CDN), so
+visitors' IPs go only to the host.
 
-    python3 build.py                                  # writes index.html
+    python3 build.py                                  # writes docs/index.html
     python3 build.py --site-url https://you.github.io # absolute og:image / og:url for link previews
 """
 import base64, html as htmlmod, json, os, re, sys

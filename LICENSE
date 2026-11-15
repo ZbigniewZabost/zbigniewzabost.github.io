@@ -3,7 +3,7 @@ Copyright (c) 2026 Zbigniew Zabost
 This repository contains two kinds of material under different terms.
 
 1. Code: build.py, tools/, and the JavaScript and CSS in src/page.html (and in the
-   generated index.html), excluding the content listed in point 2, released under the
+   generated docs/index.html and docs/404.html), excluding the content listed in point 2, released under the
    MIT License:
 
    Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,7 +24,8 @@ This repository contains two kinds of material under different terms.
    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 2. Personal content: src/content.json (career, roles, skills, ways of working and
-   hashtags), the same data as embedded in index.html, the descriptive text in
-   src/page.html and index.html, and og-image.png. All rights reserved.
+   hashtags), the same data as embedded in docs/index.html, the descriptive text in
+   src/page.html, docs/index.html and docs/404.html, and docs/og-image.png.
+   All rights reserved.
 
 Third-party logos and fonts keep their own licences; see NOTICE.md.
